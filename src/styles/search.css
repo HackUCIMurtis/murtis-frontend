@@ -1,0 +1,33 @@
+#mainContent{
+    background-color: #03071E;
+    padding-top: 5%;
+    height: 100vh;
+}
+
+#leftHalf{
+    /* background: red; */
+}
+
+#rightHalf{
+    /* background: blue; */
+}
+
+#popular-text{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#guides-text{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#hr-line{
+    background: white;
+    height: 1px;
+}
+
+#hr-line2{
+    background: white;
+    height: 1px;
+}

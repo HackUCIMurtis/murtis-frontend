@@ -1,0 +1,19 @@
+
+#guideStyle{
+    background-color: #F6B352;
+    width:40%;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+#linkStyle{
+    /* background-color: #F6B352; */
+    /* width:275%; */
+    display: "table-cell";
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+#linkStyle:active{
+    background-color: #FFFFFF;
+}
