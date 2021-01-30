@@ -20,7 +20,7 @@ class Navigation extends Component{
 
     handleChange(e){
         this.setState({
-            [e.target.id]: 
+            [e.target.id]:
             e.target.value
         })
         //console.log(this.state.searchquery)
@@ -34,13 +34,13 @@ class Navigation extends Component{
                 <Navbar.Brand>
                     <Image id="logo" src={Logo} />
                 </Navbar.Brand>
-                <Navbar.Brand > 
+                <Navbar.Brand >
                     Murtis
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        Contact
+                        Home
                     </Nav>
                 </Navbar.Collapse>
                 <Form inline onSubmit={this.handleSubmit} >

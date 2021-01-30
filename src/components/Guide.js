@@ -5,12 +5,9 @@ import {Link, NavLink} from 'react-router-dom'
 import "../styles/guide.css";
 import { linkSync } from 'fs';
 
-class Guide extends Component{
+export class Guide extends Component{
     constructor(props){
         super(props);
-        this.state={links: ["https://react-bootstrap.github.io/getting-started/introduction",
-        "https://react-bootstrap.github.io/getting-started/introduction", "https://react-bootstrap.github.io/getting-started/introduction",
-        "https://react-bootstrap.github.io/getting-started/introduction"], title:""};
     }
 
     componentDidMount(){
@@ -22,19 +19,17 @@ class Guide extends Component{
         return(
           <Container>
             <DropdownButton
-            title={this.state.title}
-            id="guideStyle"
-            >
-              {this.state.links &&
-                this.state.links.map((link, index) => {
+            title={this.props.title + " by " + this.props.author}
+            id="guideStyle">
+              {this.props.links &&
+                this.props.links.map((link, index) => {
                   return (
                     <Dropdown.Item
                       id = "linkStyle"
                       href = {link}
-                      target = "_blank" 
-                      rel = "noopener noreferrer"
-                    >
-                      Link {index+1} : Click here
+                      target = "_blank"
+                      rel = "noopener noreferrer">
+                      {index+1}) {this.props.descriptions[index]}
                     </Dropdown.Item>
                     );
                 })}
