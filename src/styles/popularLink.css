@@ -1,8 +1,12 @@
 
 #list-item{
-    background: #DC2F02;
+    background: #F6B352;
+    margin-bottom: 5%;
+    width: 50%;
+    margin-left: 25%;
 }
 
 #link-text{
-    color: white;
+    color: black;
+    margin:0px;
 }

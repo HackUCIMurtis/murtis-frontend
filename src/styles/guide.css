@@ -1,9 +1,10 @@
 
 #guideStyle{
     background-color: #F6B352;
-    width:40%;
-    font-family: 'Courier New', Courier, monospace;
+    width:60%;
+    font-family: 'Montserrat';
     color: black;
+    margin-bottom: 5%;
 }
 
 #linkStyle{

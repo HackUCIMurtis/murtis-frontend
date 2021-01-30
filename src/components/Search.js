@@ -11,7 +11,8 @@ import PopularLink from './PopularLink';
 class Search extends Component{
     constructor(props){
         super(props);
-        this.state={popularLinks:["https://google.com", "asdfsdaf", "asdfasdf", "asdfd"]};
+        this.state={popularLinks:["https://google.com", "asdfsdaf", "asdfasdf", "asdfd"],
+                    guideLinks:[0, 1]};
     }
 
     componentDidMount(){
@@ -19,6 +20,7 @@ class Search extends Component{
         // get all guides with that query
 
     }
+
     render(){
         return(
                 <Container fluid id="mainContent">
@@ -42,6 +44,17 @@ class Search extends Component{
                         <Col id="rightHalf">
                             <p id="guides-text">Guides</p>
                             <hr id="hr-line2"></hr>
+                            {this.state.guideLinks &&
+                                    this.state.guideLinks.map((link, index) => {
+                                    return (
+                                        <Guide
+                                            key={index}
+                                            links={this.state.popularLinks}
+                                            index={index}>
+                                        </Guide>
+                                        );
+                                })}
+
                         </Col>
                     </Row>
                 </Container>
