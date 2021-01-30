@@ -1,0 +1,48 @@
+/* #login-form{
+    margin-top: 20px;
+}
+
+#email{
+   width:35%;
+   margin-left:32.5%;
+}
+
+#password{
+    width:35%;
+    margin-left:32.5%;
+ }
+
+#email-label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 125%;
+}
+ 
+#password-label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 125%;
+}
+
+::placeholder{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#login-in-button{
+    font-family: 'Courier New', Courier, monospace;
+    background: #c1f0c1;
+    color: black;
+    border: none;
+    margin-bottom: 10px;
+}
+
+#login-failed {
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 100%;
+   margin-top: 20px;
+   color: red;
+}
+
+#sign-up-tag{
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 90%;
+   margin-top: 100px;
+} */
