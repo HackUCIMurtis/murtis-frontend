@@ -22,7 +22,7 @@
     color: white;
     font-size: 125%;
 }
- 
+
 #password-label{
     font: "Roboto";
     color:white;
@@ -35,10 +35,20 @@
 
 #login-in-button{
     font: "Roboto";
-    background: #FAA307;
+    background: #7D4E57;
     color: black;
     border: none;
     margin-bottom: 10px;
+    padding:10px;
+}
+
+#register-button{
+    font: "Roboto";
+    background: #D66853;
+    color: black;
+    border: none;
+    margin-bottom: 10px;
+    padding:10px;
 }
 
 #login-failed {
