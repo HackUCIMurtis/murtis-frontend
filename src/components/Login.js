@@ -13,9 +13,10 @@ import Logo from '../Murtislogoonly.png';
 class Login extends Component{
     constructor(props){
         super(props);
-        this.state={email:"", password:"", user:"", redirect:false};
+        this.state={email:"", password:"", user:"", redirect:false, userRegistered:false};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.registerUser = this.registerUser.bind(this);
     }
 
     handleChange(e){
@@ -41,11 +42,25 @@ class Login extends Component{
             })
     }
 
+    registerUser(){
+
+        console.log(this.state)
+        axios.post("http://localhost:4000/registerUser", {email:this.state.email, password:this.state.password}).then
+            (res => {
+                console.log(res)
+                this.setState({
+                    userRegistered:true
+                  })
+            }).catch(e => {
+                console.log("Error occurred while logging in")
+        })
+    }
+
     renderRedirect = () => {
         if (this.state.redirect) {
           return  <Redirect
                     to={{
-                    pathname: "/",
+                    pathname: "/home",
                     state: { user: this.state.user }
                     }}
                  />
@@ -72,7 +87,6 @@ class Login extends Component{
                         </p>
                       </Container>
                     </Jumbotron>
-
                     <Form onSubmit={this.handleSubmit} id="login-form" >
                         <Form.Group >
                           <Row>
@@ -85,6 +99,7 @@ class Login extends Component{
                             </Form.Text>
                           <Row>
                             <Form.Label id="password-label">Password</Form.Label>
+<<<<<<< HEAD
                           </Row>
                           <Row>
                             <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="" />
@@ -100,6 +115,19 @@ class Login extends Component{
                             </Button>
                           </ButtonGroup>
                         </Row>
+=======
+                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
+                        </Form.Group>
+                        <ButtonGroup horizontal>
+                          <Button id="login-in-button" variant="danger" type="submit">
+                              Login
+                          </Button>
+                          <Button id="register-button" variant="success" onClick={this.registerUser}>
+                              Register
+                          </Button>
+                        </ButtonGroup>
+                        {this.state.userRegistered && <h5 style={{color:"white"}}> User has been registered. Please login.</h5>}
+>>>>>>> 070f680... added flow
                     </Form>
               </Col>
             </Row>

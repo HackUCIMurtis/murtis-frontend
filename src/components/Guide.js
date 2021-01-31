@@ -29,7 +29,7 @@ export class Guide extends Component{
     getGuide(){
       return (
         <DropdownButton
-          title={this.props.title + " by " + this.props.author}
+          title={this.props.title + " by " + this.props.creator}
           id="guideStyle"
           variant="outline-danger"
           >

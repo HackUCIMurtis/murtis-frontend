@@ -1,9 +1,13 @@
 .color-nav{
+<<<<<<< HEAD
     background-color: #370616;
+=======
+    background-color: #03071E;
+>>>>>>> 070f680... added flow
 }
 
 #submit-button{
-    background: #D00000;
+    background: #FFBA08;
     color: black;
 }
 
@@ -11,4 +15,5 @@
 #logo{
     height: 50px;
     width: 100px;
+    border-width: 0px;
 }

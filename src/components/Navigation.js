@@ -35,7 +35,7 @@ class Navigation extends Component{
         if (this.state.redirect) {
           return  <Redirect
                     to={{
-                    pathname: "/login",
+                    pathname: "/search",
                     state: { searchquery: this.state.searchquery }
                     }}
                  />
@@ -50,7 +50,7 @@ class Navigation extends Component{
             {this.renderRedirect()}
             <Navbar className="color-nav" expand="lg">
                 <Navbar.Brand>
-                    <Image id="logo" src={Logo} 
+                    <Image id="logo" src={Logo}
                     onMouseOver={e => (e.currentTarget.src = Logohover)}
                     onMouseOut={e => (e.currentTarget.src = Logo)}
                     />

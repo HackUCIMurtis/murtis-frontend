@@ -45,12 +45,13 @@ export class Home extends Component{
     updateMyHome() {
       axios.post("http://localhost:4000/guides", {email:"keeratg@gmail.com"}).then
       (res => {
+        console.log(res.data)
         this.setState({
           saved:res.data.likes,
           guides:res.data.guides,
         })
       }).catch(e => {
-        console.log("Error occurred while getting your saved and created guides")
+        console.log("Error occurred while getting your saved and created guides: ", e)
       })
 
     }
@@ -77,7 +78,7 @@ export class Home extends Component{
                   <Guide
                     title={data.title}
                     links={data.links}
-                    author={data.author}
+                    creator={data.creator}
                     descriptions={data.descriptions}
                     showSaved={true}
                     isSaved={true}>
@@ -93,7 +94,7 @@ export class Home extends Component{
                   <Guide
                     title={data.title}
                     links={data.links}
-                    author={data.author}
+                    creator={data.creator}
                     descriptions={data.descriptions}
                     color={"DC2F02"}
                     showSaved={false}>
