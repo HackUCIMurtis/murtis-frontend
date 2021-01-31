@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import { Row, Col, Container, Jumbotron, ButtonGroup } from 'react-bootstrap';
+import { Row, Col, Container, Jumbotron, ButtonGroup, Image } from 'react-bootstrap';
 import {InputGroup, Button, Form, FormControl} from 'react-bootstrap';
 import "../styles/login.css";
 import Navigation from './Navigation';
 import axios from 'axios';
 import {Redirect, Link} from 'react-router-dom';
+import Logo from '../Murtislogoonly.png';
 // import {connect} from 'react-redux';
 // import {login} from '../../store/actions/authActions';
 // import {Redirect, Link} from 'react-router-dom';
@@ -57,35 +58,48 @@ class Login extends Component{
           <Container fluid >
             <Row>
               <Col>
+                <div className = "murtislogo">
+                  <Image fluid src = {Logo}></Image>
+                </div>
               </Col>
               <Col style={{backgroundColor:"#11151C", height:"100vh", font:"Roboto"}}>
                     {this.renderRedirect()}
                     <Jumbotron fluid style={{backgroundColor:"#11151C", color:"white"}}>
                       <Container>
-                        <h1 style={{textSize:"100dp"}}>Mutris</h1>
-                        <p>
-                          guides for everyone by everyone
+                        <h1 style={{textSize:"100dp", textAlign:'left', fontFamily:'Montserrat', fontWeight:'bold', fontSize: 125}}>Murtis</h1>
+                        <p style={{textSize:"100dp", textAlign:'left', fontFamily:'Montserrat', fontSize: 45}}>
+                          Guides for Everyone <br/> by Everyone
                         </p>
                       </Container>
                     </Jumbotron>
 
                     <Form onSubmit={this.handleSubmit} id="login-form" >
                         <Form.Group >
+                          <Row>
                             <Form.Label id="email-label">Email address</Form.Label>
-                            <Form.Control id="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+                          </Row>
+                          <Row>
+                            <Form.Control id="email" onChange={this.handleChange} type="email" placeholder="" />
+                          </Row>
                             <Form.Text className="text-muted">
                             </Form.Text>
+                          <Row>
                             <Form.Label id="password-label">Password</Form.Label>
-                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
-                        </Form.Group>
-                        <ButtonGroup horizontal>
-                          <Button id="login-in-button" variant="danger" type="submit">
-                              Login
-                          </Button>
-                          <Button id="register-button" variant="success" type="submit">
-                              Register
-                          </Button>
-                        </ButtonGroup>
+                          </Row>
+                          <Row>
+                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="" />
+                          </Row>
+                        </Form.Group>   
+                        <Row>
+                          <ButtonGroup horizontal>
+                            <Button id="login-in-button" variant="danger" type="submit">
+                                Login
+                            </Button>
+                            <Button id="register-button" variant="success" type="submit">
+                                Register
+                            </Button>
+                          </ButtonGroup>
+                        </Row>
                     </Form>
               </Col>
             </Row>
