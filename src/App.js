@@ -15,15 +15,9 @@ function App() {
         <div className="App">
           <Switch>
             <Route exact path="/" component={Login} />
-<<<<<<< HEAD
             <Route path="/home" component={Home} />
             <Route path="/search" component={Search} />
             <Route path="/create" component={Create} />
-=======
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/search" component={Search} />
-            {/* <Route path="/create" component={Create} /> */}
->>>>>>> 070f680... added flow
           </Switch>
         </div>
       </BrowserRouter>

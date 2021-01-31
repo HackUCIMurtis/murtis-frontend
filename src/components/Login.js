@@ -99,24 +99,10 @@ class Login extends Component{
                             </Form.Text>
                           <Row>
                             <Form.Label id="password-label">Password</Form.Label>
-<<<<<<< HEAD
-                          </Row>
+                            </Row>
                           <Row>
-                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="" />
-                          </Row>
-                        </Form.Group>   
-                        <Row>
-                          <ButtonGroup horizontal>
-                            <Button id="login-in-button" variant="danger" type="submit">
-                                Login
-                            </Button>
-                            <Button id="register-button" variant="success" type="submit">
-                                Register
-                            </Button>
-                          </ButtonGroup>
-                        </Row>
-=======
                             <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
+                          </Row>
                         </Form.Group>
                         <ButtonGroup horizontal>
                           <Button id="login-in-button" variant="danger" type="submit">
@@ -127,7 +113,6 @@ class Login extends Component{
                           </Button>
                         </ButtonGroup>
                         {this.state.userRegistered && <h5 style={{color:"white"}}> User has been registered. Please login.</h5>}
->>>>>>> 070f680... added flow
                     </Form>
               </Col>
             </Row>
