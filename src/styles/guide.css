@@ -1,18 +1,17 @@
 
 #guideStyle{
-    background-color: #F6B352;
-    width:60%;
-    font-family: 'Montserrat';
-    color: black;
+    width:80%;
+    font-family: 'Roboto';
+    color: white;
     margin-bottom: 5%;
-    border-width: 0px;
+    border-width: 2px;
 }
 
 #linkStyle{
     /* background-color: #F6B352; */
     /* width:275%; */
     display: "table-cell";
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto';
     color: black;
 }
 
