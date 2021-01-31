@@ -19,11 +19,11 @@ export class Guide extends Component{
     }
 
     showSaved(){
-      return  <Button variant="warning" size="sm" active>Saved</Button>
+      return  (<Button variant="warning" size="sm" active>Saved</Button>);
     }
 
     showNotSaved(){
-      return  <Button variant="outline-warning" size="sm" disabled>Save</Button>
+      return (<Button variant="outline-warning" size="sm" onClick={this.addToSave}>Save</Button>);
     }
 
     getGuide(){

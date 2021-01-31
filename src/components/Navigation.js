@@ -27,18 +27,19 @@ class Navigation extends Component{
         this.setState({
             [e.target.id]:
             e.target.value
-        })
+        });
+        this.props.updateFunc(e.target.value);
         //console.log(this.state.searchquery)
     }
 
     renderRedirect = () => {
         if (this.state.redirect) {
+          console.log("renderRedirect");
           return  <Redirect
                     to={{
                     pathname: "/search",
                     state: { searchquery: this.state.searchquery }
-                    }}
-                 />
+                    }}/>
         }
       }
 
@@ -55,19 +56,20 @@ class Navigation extends Component{
                     onMouseOut={e => (e.currentTarget.src = Logo)}
                     />
                 </Navbar.Brand>
-                <Navbar.Brand >
+                <Navbar.Brand style={{color:"white"}}>
                     Murtis
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
+                      <Link to="/home">
                         Home
+                      </Link>
+                      <Link style={{paddingLeft:"20px"}} to="/search">
+                        Search
+                      </Link>
                     </Nav>
                 </Navbar.Collapse>
-                <Form inline onSubmit={this.handleSubmit} >
-                    <FormControl id="searchquery" type="text" placeholder="Search Guide" onChange={this.handleChange} />
-                    <Button id="submit-button" variant="outline-success" type="submit">Search</Button>
-                </Form>
             </Navbar>
             </div>
         )

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, FormControl, InputGroup, Form, Button } from 'react-bootstrap';
 import {ListGroup} from 'react-bootstrap';
 import "../styles/search.css";
 import Guide from './Guide';
@@ -17,21 +17,32 @@ class Search extends Component{
         this.state={
           popularLinks:["https://google.com", "asdfsdaf", "asdfasdf", "asdfd"],
           guides:[],
-          query:""
+          searchTerm:"",
+          email:"keeratg@gmail.com"
         };
         this.updateSearchResults = this.updateSearchResults.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e){
+        this.setState({
+            [e.target.id]:
+            e.target.value
+        })
+        this.updateSearchResults()
     }
 
     updateSearchResults() {
-      axios.get("http://localhost:4000/api", {keyword:this.state.query}).then
+      axios.post("http://localhost:4000/search", {keyword:this.state.searchTerm, email:this.state.email}).then
           (res => {
               console.log(res)
               this.setState({
-                  popularLinks:res.data.popularLinks,
-                  guides:res.data.guides
+                  //popularLinks:res.data.popularLinks,
+                  guides:res.data
               })
+              console.log(this.state.guides)
           }).catch(e => {
-              console.log("Error occurred while logging in")
+              console.log("Error occured while searching: ", e)
       })
     }
 
@@ -44,7 +55,15 @@ class Search extends Component{
     render(){
         return(
                 <Container fluid id="mainContent">
-                  <Navigation />
+                  <Navigation updateFunc={this.updateSearchTerm}/>
+
+                    <InputGroup className="mb-3" style={{width:"50%", margin:"auto"}}>
+                      <FormControl
+                        placeholder="Search"
+                        onChange={this.handleChange}
+                        id="searchTerm"/>
+                    </InputGroup>
+
                     <Row>
                         <Col id="leftHalf">
                             <p id="popular-text">Most Popular Links</p>
@@ -65,15 +84,18 @@ class Search extends Component{
                         <Col id="rightHalf">
                             <p id="guides-text">Guides</p>
                             <hr id="hr-line2"></hr>
-                            {this.state.guideLinks &&
-                                    this.state.guideLinks.map((link, index) => {
+                            {this.state.guides &&
+                                    this.state.guides.map((data, index) => {
                                     return (
-                                        <Guide
-                                            key={index}
-                                            links={this.state.popularLinks}
-                                            index={index}>
-                                        </Guide>
-                                        );
+                                      <Guide
+                                        title={data.data.title}
+                                        links={data.data.links}
+                                        creator={data.data.creator}
+                                        descriptions={["LINKS"]}
+                                        color={"#DC2F02"}
+                                        showSaved={true}
+                                        isSaved={false}>
+                                      </Guide>);
                                 })}
 
                         </Col>
