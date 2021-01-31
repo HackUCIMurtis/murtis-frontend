@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col, Container} from "react-bootstrap"
+import { Row, Col, Container, Button} from "react-bootstrap"
 import axios from 'axios';
 import { Guide } from './Guide.js'
 
@@ -10,8 +10,8 @@ const mainStyles = {
 
 const tableHeader = {
   color: "#FFBA08",
-  font: "Montserrat",
-  paddingTop: 10
+  font: "Roboto",
+  paddingTop: 10,
 }
 const hrStyle = {
   borderColor: "#FFBA08",
@@ -74,12 +74,15 @@ export class Home extends Component{
                     title={data.title}
                     links={data.links}
                     author={data.author}
-                    descriptions={data.descriptions}>
+                    descriptions={data.descriptions}
+                    showSaved={true}
+                    isSaved={true}>
                   </Guide>)}
                 </Col>
                 <Col>
-                  <Container style={tableHeader}>
-                    MY GUIDES
+                  <Container  style={tableHeader} horizontal>
+                    MY GUIDES {" "}
+                    <Button variant="outline-light" style={{marginLeft:"20px", borderWidth:"1"}}>+</Button>
                   </Container>
                   <hr style={hrStyle}/>
                   {this.state.guides.map((data, index) =>
@@ -87,7 +90,9 @@ export class Home extends Component{
                     title={data.title}
                     links={data.links}
                     author={data.author}
-                    descriptions={data.descriptions}>
+                    descriptions={data.descriptions}
+                    color={"DC2F02"}
+                    showSaved={false}>
                   </Guide>)}
                 </Col>
               </Row>
