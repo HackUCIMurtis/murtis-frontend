@@ -13,10 +13,9 @@ function App() {
   return (
       <BrowserRouter>
         <div className="App">
-          <Navigation />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
+            <Route exact path="/" component={Login} />
+            <Route path="/home" component={Home} />
             <Route path="/search" component={Search} />
             {/* <Route path="/create" component={Create} /> */}
           </Switch>

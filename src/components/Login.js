@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Jumbotron, ButtonGroup } from 'react-bootstrap';
 import {InputGroup, Button, Form, FormControl} from 'react-bootstrap';
 import "../styles/login.css";
 import Navigation from './Navigation';
@@ -19,7 +19,7 @@ class Login extends Component{
 
     handleChange(e){
         this.setState({
-            [e.target.id]: 
+            [e.target.id]:
             e.target.value
         })
     }
@@ -27,8 +27,8 @@ class Login extends Component{
     handleSubmit(e){
         e.preventDefault();
         //console.log("SUBMITTED")
-        //console.log(this.state)
-        axios.post("http://0.0.0.0:4000/login", {email:this.state.email, password:this.state.password}).then
+        console.log(this.state)
+        axios.post("http://localhost:4000/login", {email:this.state.email, password:this.state.password}).then
             (res => {
                 console.log(res)
                 this.setState({
@@ -54,23 +54,43 @@ class Login extends Component{
     render(){
 
         return(
-            <Container fluid id="main-body">
-                {this.renderRedirect()}
-                <Form onSubmit={this.handleSubmit} id="login-form">
-                    <Form.Group >
-                        <Form.Label id="email-label">Email address</Form.Label>
-                        <Form.Control id="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                        <Form.Label id="password-label">Password</Form.Label>
-                        <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Button id="login-in-button" variant="success" type="submit">
-                        Login
-                    </Button>
-                </Form>
-            </Container>
+          <Container fluid >
+            <Row>
+              <Col>
+              </Col>
+              <Col style={{backgroundColor:"#11151C", height:"100vh", font:"Roboto"}}>
+                    {this.renderRedirect()}
+                    <Jumbotron fluid style={{backgroundColor:"#11151C", color:"white"}}>
+                      <Container>
+                        <h1 style={{textSize:"100dp"}}>Mutris</h1>
+                        <p>
+                          guides for everyone by everyone
+                        </p>
+                      </Container>
+                    </Jumbotron>
+
+                    <Form onSubmit={this.handleSubmit} id="login-form" >
+                        <Form.Group >
+                            <Form.Label id="email-label">Email address</Form.Label>
+                            <Form.Control id="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+                            <Form.Text className="text-muted">
+                            </Form.Text>
+                            <Form.Label id="password-label">Password</Form.Label>
+                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
+                        </Form.Group>
+                        <ButtonGroup horizontal>
+                          <Button id="login-in-button" variant="danger" type="submit">
+                              Login
+                          </Button>
+                          <Button id="register-button" variant="success" type="submit">
+                              Register
+                          </Button>
+                        </ButtonGroup>
+                    </Form>
+              </Col>
+            </Row>
+          </Container>
+
         )
     }
 }

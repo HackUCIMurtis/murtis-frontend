@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Row, Col, Container, Button} from "react-bootstrap"
 import axios from 'axios';
-import { Guide } from './Guide.js'
+import { Guide } from './Guide.js';
+import Navigation from './Navigation';
+
 
 const mainStyles = {
   backgroundColor:"#03071E",
@@ -41,10 +43,10 @@ export class Home extends Component{
 
 
     updateMyHome() {
-      axios.get("http://192.168.0.107:3000/api/guides").then
+      axios.post("http://localhost:4000/guides", {email:"keeratg@gmail.com"}).then
       (res => {
         this.setState({
-          saved:res.data.saved,
+          saved:res.data.likes,
           guides:res.data.guides,
         })
       }).catch(e => {
@@ -54,7 +56,8 @@ export class Home extends Component{
     }
 
     componentDidMount() {
-      //this.updateMyHome()
+      console.log("mountin")
+      this.updateMyHome()
     }
 
 
@@ -63,6 +66,7 @@ export class Home extends Component{
         return(
             <Container fluid
               style={mainStyles}>
+              <Navigation />
               <Row>
                 <Col>
                   <Container style={tableHeader}>
