@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Navbar, Nav, Form, FormControl, Button, NavDropdown, Image, NavItem} from 'react-bootstrap'
 import {Link, NavLink} from 'react-router-dom'
 import Logo from '../Murtislogoonly.png'
+import Logohover from '../mutrislogohover.png'
 import "../styles/navigation.css";
 
 
@@ -32,7 +33,10 @@ class Navigation extends Component{
         return(
             <Navbar className="color-nav" expand="lg">
                 <Navbar.Brand>
-                    <Image id="logo" src={Logo} />
+                    <Image id="logo" src={Logo} 
+                    onMouseOver={e => (e.currentTarget.src = Logohover)}
+                    onMouseOut={e => (e.currentTarget.src = Logo)}
+                    />
                 </Navbar.Brand>
                 <Navbar.Brand >
                     Murtis
