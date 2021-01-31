@@ -43,7 +43,7 @@ class Create extends React.Component {          // ["a", "ab", "abc"]    abc
     for (i=1; i <= this.state.numLinks; i++) {
       links.push(this.state.links["link-"+i]);
     }
-    axios.post("http://localhost:4000/createLink", {creator:this.props.email, links: links, title: this.state.title, tags: tags})
+    axios.post("http://localhost:4000/createLink", {creator:"keeratg@gmail.com", links: links, title: this.state.title, tags: tags})
       .then(res => {
         console.log("guide created");
       })

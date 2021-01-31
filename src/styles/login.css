@@ -5,6 +5,7 @@
 
 #login-form{
     padding-top: 0%;
+    margin-left: 1.4rem;
 }
 
 #email{
@@ -98,4 +99,10 @@
     margin-top: 100px;
     height: auto;
     width: auto;
+}
+
+
+
+@media only screen and (max-width: 1128px) {
+
 }

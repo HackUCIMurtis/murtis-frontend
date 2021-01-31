@@ -67,7 +67,7 @@ class Login extends Component{
                     <Jumbotron fluid style={{backgroundColor:"#11151C", color:"white"}}>
                       <Container>
                         <h1 style={{textSize:"100dp", textAlign:'left', fontFamily:'Montserrat', fontWeight:'bold', fontSize: 125}}>Murtis</h1>
-                        <p style={{textSize:"100dp", textAlign:'left', fontFamily:'Montserrat', fontSize: 45}}>
+                        <p style={{textSize:"100dp", textAlign:'left', fontFamily:'Montserrat', fontSize: 45, paddingLeft: "0.6rem"}}>
                           Guides for Everyone <br/> by Everyone
                         </p>
                       </Container>
