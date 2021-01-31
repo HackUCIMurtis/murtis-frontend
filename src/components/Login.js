@@ -101,9 +101,10 @@ class Login extends Component{
                             <Form.Label id="password-label">Password</Form.Label>
                             </Row>
                           <Row>
-                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
+                            <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="" />
                           </Row>
                         </Form.Group>
+                        <Row>
                         <ButtonGroup horizontal>
                           <Button id="login-in-button" variant="danger" type="submit">
                               Login
@@ -112,6 +113,8 @@ class Login extends Component{
                               Register
                           </Button>
                         </ButtonGroup>
+                        </Row>
+
                         {this.state.userRegistered && <h5 style={{color:"white"}}> User has been registered. Please login.</h5>}
                     </Form>
               </Col>
