@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import "../styles/login.css";
+import "../styles/create.css";
 
 class Create extends React.Component {
   state = {
@@ -22,23 +22,18 @@ class Create extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container fluid id="create-page">
         <Form>
-          <Row>
             <Form.Group>
-              <Form.Control type="text" placeholder="Title"/>
+              <Form.Label id="form-title">CREATE A GUIDE</Form.Label>
+              <Button id="add-btn" onClick={this.handleAddLink}>+</Button>
+              <Form.Control id="title" type="text" placeholder="Title"/>
+              {[...Array(this.state.numLinks)].map((e, i) => {
+                    return(
+                      <Form.Control id="input" type="text" placeholder={"Link " + (i + 1)}/>)
+                  })}
             </Form.Group>
-          </Row>
-          <Row>
-            {[...Array(this.state.numLinks)].map((e, i) => 
-            <Form.Group>
-              <Form.Control type="text" placeholder={"Link " + (i + 1)}/>
-            </Form.Group>)}
-            <Button onClick={this.handleAddLink}>+</Button>
-          </Row>
-          <Row>
-            <Button onSubmit={this.handleAddLink} type="submit">Submit</Button>
-          </Row>
+            <Button id="submit-btn" onSubmit={this.handleAddLink} type="submit">Submit</Button>
         </Form>
       </Container>
     )
