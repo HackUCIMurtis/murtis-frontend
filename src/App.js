@@ -7,7 +7,7 @@ import Search from './components/Search'
 import Navigation from './components/Navigation'
 import Login from './components/Login'
 import Home from './components/Home'
-// import Create from './components/Create'
+import Create from './components/Create'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/search" component={Search} />
-            {/* <Route path="/create" component={Create} /> */}
+            <Route path="/create" component={Create} />
           </Switch>
         </div>
       </BrowserRouter>
